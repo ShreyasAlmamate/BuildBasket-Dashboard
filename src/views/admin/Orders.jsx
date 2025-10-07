@@ -150,6 +150,7 @@ const Orders = () => {
                             <tbody>
 
                                 {myOrders.map((o, i) => (
+                                    <>
                                     <tr 
                                         key={i} 
                                         className='bg-white border-b hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300'
@@ -202,10 +203,10 @@ const Orders = () => {
                                         </td>
                                     </tr> 
             
-                                    {/* Suborder Details */}
                                     {show === o._id && o.suborder && o.suborder.length > 0 && (
                                         <tr>
                                             <td colSpan="6" className='px-6 py-4 bg-gradient-to-r from-orange-50 to-orange-100'>
+                                                {/* Suborder Details */}
                                                 <div className='space-y-3'>
                                                     <h4 className='font-semibold text-gray-800 text-lg mb-3'>Sub Orders:</h4>
                                                     <div className='space-y-2'>
@@ -240,6 +241,7 @@ const Orders = () => {
                                             </td>
                                         </tr>
                                     )}
+                                    </>
                                 ))}
 
                                 {myOrders.length === 0 && (
